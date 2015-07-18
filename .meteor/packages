@@ -8,3 +8,8 @@ meteor-platform
 autopublish
 insecure
 accounts-facebook
+iron:router
+accounts-base
+accounts-password
+service-configuration
+fastclick

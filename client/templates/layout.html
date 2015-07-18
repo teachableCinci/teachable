@@ -1,0 +1,23 @@
+<template name="layout">
+
+		{{> navbar}}
+		<body>
+			<main>
+			{{#if currentUser}}
+	    		{{> yield}}
+	    	{{else}}
+	    		{{> signup}}
+	    	{{/if}}
+	    	</main>
+	    </body>
+	    <footer>
+	    	{{> footer}}
+	    </footer>
+
+
+	<style>
+
+
+
+	</style>
+</template>
