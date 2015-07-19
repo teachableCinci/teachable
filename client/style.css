@@ -8,6 +8,11 @@ span.badge {
 	background-color: #2bbbad;
 	display: none;
 }
-.points:hover{
-
+.brand-logo{
+	background: url(logo2.png) no-repeat top left;
+	background-size: contain;
+    height: 55px;
+    width: 160px;
+    margin-top: 5px;
+    margin-left: 5px;
 }
