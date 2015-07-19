@@ -1182,7 +1182,7 @@ function AudioListener(callback){
     if(callback) {
         this.callBack = callback;
     }
-    this.listener.lang = "en";
+    this.listener.lang = "es";
     //this.listener.interimResults = true;
     var me = this;
 
@@ -1234,16 +1234,3 @@ function AudioListener(callback){
     }
 }
 
-    setTimeout(function(){
-    var speaker = RobotSpeaker();
-      var listener = AudioListener();
-    function talk() {
-        speaker.speak("en", document.getElementById("text").value);
-    }
-
-    function listen() {
-        listener.listen("en", function(text) {
-            document.getElementById("text").value = text;
-        });
-    };
-  },1000);
