@@ -1,0 +1,13 @@
+span.badge {
+	position: relative;
+	color: #fff;
+	right: 0;
+}
+.points{
+	padding: 0;
+	background-color: #2bbbad;
+	display: none;
+}
+.points:hover{
+
+}

@@ -4,18 +4,6 @@
 	<br><br>
 	<button class="btn btn-success" onclick="talk()">Talk It!</button>
 	<button class="btn btn-success" onclick="listen()">Recognize My Voice</button>
-	<script>
-		var speaker = new RobotSpeaker();
-	    var listener = new AudioListener();
-    function talk() {
-        speaker.speak("en", document.getElementById("text").value);
-    }
 
-    function listen() {
-        listener.listen("en", function(text) {
-            document.getElementById("text").value = text;
-        });
-    }
-	</script>
 
 </template>
