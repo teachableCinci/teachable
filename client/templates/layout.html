@@ -3,11 +3,14 @@
 		{{> navbar}}
 		<body>
 			<main>
-			{{#if currentUser}}
-	    		{{> yield}}
-	    	{{else}}
-	    		{{> signup}}
-	    	{{/if}}
+				<div class='container'>
+				{{#if currentUser}}
+	    			{{> yield}}
+	    		{{else}}
+	    			{{> signup}}
+	    		{{/if}}
+	    		</div>
+
 	    	</main>
 	    </body>
 	    <footer>
