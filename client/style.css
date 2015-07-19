@@ -1,3 +1,6 @@
+body{
+	font-family: 'Handlee', cursive;
+}
 span.badge {
 	position: relative;
 	color: #fff;
@@ -15,4 +18,7 @@ span.badge {
     width: 180px;
     margin-top: 10px;
     margin-left: 10px;
+}
+li{
+	font-size: 1.3em;
 }
