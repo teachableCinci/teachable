@@ -127,6 +127,11 @@ var questions = [
 		question: "Write out \"the car loves the man\" in Spanish",
 		answer: "hombre",
 		type: "handwriting"
+	},
+	{
+		question: "Speak  \"the boy\" in Spanish",
+		answer: "el niño",
+		type: "speech"
 	}
 ];
 
