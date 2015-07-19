@@ -1,3 +1,5 @@
+/*
+
 Template.badge.onRendered(function(){
 
 	$(document).click(function (event) {    		
@@ -6,4 +8,4 @@ Template.badge.onRendered(function(){
     	});
 	});
 
-})
+}); */

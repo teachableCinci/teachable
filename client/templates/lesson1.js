@@ -58,5 +58,10 @@ function addPoints(num){
 
 function pointsAnimation(num){
 
+
+    	$('.points').stop().fadeTo('slow',1,function(){
+    		$(this).delay(2000).fadeOut('slow');
+    	});
+
 	// +num points will flash up on screen then fade away.
 }
