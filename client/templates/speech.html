@@ -1,19 +1,22 @@
 <template name='speech'>
-	<h3>Enter Text To Play:</h3>
-	<input id="text">&nbsp;(Recognized text for voice will also appear here)
-	<br><br>
-	<button class="btn btn-success" onclick="talk()">Talk It!</button>
-	<button class="btn btn-success" onclick="listen()">Recognize My Voice</button>
+
+	<h1>Enter Text To Play:</h1>
+	<input id="userAnswer" type='text' class='validate'>&nbsp;(Recognized text for voice will also appear here)
+
+
+<br><br>
+	<button class="btn blue" onclick="talk()">Talk It!</button>
+	<button class="btn orange" onclick="listen()">Recognize My Voice</button>
 	<script>
 		var speaker = new RobotSpeaker();
 	    var listener = new AudioListener();
     function talk() {
-       speaker.speak("es", document.getElementById("text").value);
+       speaker.speak("es", document.getElementById("userAnswer").value);
    }
 
     function listen() {
         listener.listen("es", function(text) {
-           document.getElementById("text").value = text;
+           document.getElementById("userAnswer").value = text;
         });
     }
 	</script>

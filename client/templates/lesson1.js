@@ -1,10 +1,36 @@
 Session.set('teach', true);
 Session.set('test', false);
+Session.set('done', false);
 
-Session.set('cardNum', 0);
+Session.set('cardNum', '0');
 Session.set('questionNum', '0');
 
 var teachingCards = [
+	{
+		type: 'tutorial',
+		content: {
+			title: 'Lesson 1 - Introduction',
+			image: 'img/lesson1.jpg',
+			text: 'This lesson will teach you a few basic spanish words and how to say a sentence. Afterwards you will be quizzed on what you learned',
+		},
+		facts: [
+			{
+				category: 'nouns',
+				name:'hombre',
+				english: 'man',
+				spanish: 'hombre'
+			}
+		],
+		skills: [
+			{
+				category: 'sentenceForming',
+				name: 'articles-masculine',
+				english: 'man',
+				spanish: 'hombre'
+			}
+
+		]
+	},
 	{
 		type: 'noun',
 		content: {
@@ -54,7 +80,7 @@ var teachingCards = [
 	{
 		type: 'verb',
 		content: {
-			image: 'img/heart.jpg',
+			image: 'img/heart.png',
 			speak: 'ama',
 			title: 'ama',
 			english: '(he/she/it/[a noun] loves',
@@ -101,6 +127,11 @@ var questions = [
 		question: "Write out \"the car loves the man\" in Spanish",
 		answer: "hombre",
 		type: "handwriting"
+	},
+	{
+		question: "Speak  \"the boy\" in Spanish",
+		answer: "el niño",
+		type: "speech"
 	}
 ];
 
@@ -110,6 +141,25 @@ Template.lesson1.helpers({
 	},
 	test: function(){
 		return Session.get('test');
+	},
+	done: function(){
+		return Session.get('done');
+	}
+});
+
+Template.teach1.helpers({
+	card: function() {
+		return teachingCards[Session.get('cardNum')];
+	}
+});
+
+Template.teach1.events({
+	'click #cardContinue': function(){
+		Session.set('cardNum', +Session.get('cardNum') + 1);
+		addPoints(2);
+		pointsAnimation(2);
+
+		updateSection();
 	}
 });
 
@@ -141,6 +191,7 @@ Template.test1.events({
 
 			
 		}
+		updateSection();
 
 
 	}
@@ -163,10 +214,24 @@ function addPoints(num){
 
 function pointsAnimation(num){
 
-
-    	$('.points').stop().fadeTo('slow',1,function(){
-    		$(this).delay(2000).fadeOut('slow');
+		num = 10;
+    	$('#badge'+num).stop().fadeTo('fast',1,function(){
+    		$(this).delay(1000).fadeOut('slow');
     	});
 
 	// +num points will flash up on screen then fade away.
+}
+
+
+function updateSection(){
+	if(Session.get('cardNum') >= teachingCards.length){
+		Session.set('teach', false);
+		Session.set('test', true);
+	}
+	if (Session.get('questionNum') >= questions.length){
+		Session.set('test', false);
+		Session.set('done', true);
+	}
+
+	console.log(Session.get('teach'), Session.get('test'), Session.get('done'));
 }

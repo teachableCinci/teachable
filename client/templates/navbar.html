@@ -10,18 +10,23 @@
       <ul class="right fixed">
         <a></a>
         {{#if currentUser}}
-        {{> badge}}
+        {{> badge10}}
         <a href='learningHistory'>{{points}} pts </a>
         {{/if}}
       </ul>
       <ul class="side-nav fixed" id="sideNav">
 
         {{#if currentUser}}
+
         <li> <a href="lesson1" style="font-size:1.2em">Lesson 1</a> </li>
         <li> <a href='lesson2' style="font-size:1.2em">Lesson 2</a></li>
+
         <li> {{> logout}}</li>
 
+        {{else}}
+        <li><a> {{> signup}} </a></li>
         {{/if}}
+        
       </ul>
 
   </nav>
