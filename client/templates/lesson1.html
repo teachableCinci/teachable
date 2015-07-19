@@ -5,7 +5,10 @@
 	{{else}}
 		{{#if test}}
 			{{> test1}}
-
+		{{else}}
+			{{#if done}}
+				{{> done1}}
+			{{/if}}
 		{{/if}}
 
 	{{/if}}
@@ -20,27 +23,25 @@
         <div class="col s12 m7">
           <div class="card">
             <div class="card-image">
-              <img src="img/man.jpg">
-              <span class="card-title">el hombre</span>
+              <img src="{{card.content.image}}">
+              <span class="card-title black-text"><strong>{{card.content.title}}</strong></span>
             </div>
             <div class="card-content">
-              <p>English: <span class='blue text'>man</span></p>
-              <p>Spanish: <span class='orange text'>hombre</span></p>
+              {{#if card.content.english}}
+              	<p>English: <span class='blue text'>{{card.content.english}}</span></p>
+              {{/if}}
+              {{#if card.content.spanish}}
+              	<p>Spanish: <span class='orange text'>{{card.content.spanish}}</span></p>
+              {{/if}}
+              <br>
+              <p> {{card.content.text}} </p>
             </div>
             <div class="card-action">
-              <a>Continue</a>
+              <button id='cardContinue' class ='btn btn-flat white blue-text'>Continue</button>
             </div>
           </div>
         </div>
       </div>
-
-<ul>
-	<li>The word for "man" in Spanish is "hombre". [[play "hombre" in spanish] and have replay button.]</li>
-	<li>The word for "car" is "auto"</li>
-	<li>The word for "the" (for masculine nouns such as "hombre" or "auto" is "el". So "the car" is "el auto"</li>
-	<li>"[a noun] loves" is "ama", where [a noun] would be for example 'hombre'</li>
-	<li>So to say "the man loves the car", you would say "el hombre ama el auto"</li>
-</ul>
 
 </template>
 
@@ -48,6 +49,11 @@
 	<p> {{question.question}} </p>
 	{{#if equals question.type 'handwriting'}}
 		{{> handwriting}}
+
+	{{else}}
+		{{#if equals question.type 'speech'}}
+			{{> speech}}
+		{{/if}}
 	{{/if}}
 	<button id='checkAnswer' class="waves-effect waves-white white btn blue-text" value='Check Answer'>Check Answer</button>
 
@@ -71,6 +77,13 @@
 
 
 -->
+
+
+</template>
+
+<template name='done'>
+
+Congratulations! You have finished the first lesson.
 
 
 </template>

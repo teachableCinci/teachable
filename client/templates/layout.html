@@ -5,10 +5,12 @@
 			<main>
 				<div class='container'>
 				{{#if currentUser}}
-	    			{{> yield}}
+	    			
 	    		{{else}}
-	    			{{> signup}}
+
 	    		{{/if}}
+
+	    		{{> yield}}
 	    		</div>
 
 	    	</main>
