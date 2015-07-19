@@ -17,7 +17,7 @@ var teachingCards = [
 		},
 		facts: [
 			{
-				category: 'nouns'
+				category: 'nouns',
 				name:'hombre',
 				english: 'man',
 				spanish: 'hombre'
@@ -25,7 +25,7 @@ var teachingCards = [
 		],
 		skills: [
 			{
-				category: 'sentenceForming'
+				category: 'sentenceForming',
 				name: 'articles-masculine',
 				english: 'man',
 				spanish: 'hombre'
@@ -44,7 +44,7 @@ var teachingCards = [
 		},
 		facts: [
 			{
-				category: 'nouns'
+				category: 'nouns',
 				name:'auto',
 				english: 'car',
 				spanish: 'auto'
@@ -59,12 +59,12 @@ var teachingCards = [
 			title: 'ama',
 			english: '(he/she/it/[a noun] loves',
 			text: '"[a noun] loves" is "ama", where [a noun] would be for example "hombre". So to say "the man loves the car", you would say "el hombre ama el auto"',
-			spanish: 'ama',
+			spanish: 'ama'
 		},
 		facts: [
 			{
 				introductory: true,
-				category: 'verbs'
+				category: 'verbs',
 				name:'ama',
 				english: 'loves',
 				spanish: 'ama'
