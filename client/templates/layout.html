@@ -4,8 +4,11 @@
 		<body>
 			<main>
 				<div class='container'>
-
-	    		{{> yield}}
+				{{#if currentUser}}
+	    			{{> yield}}
+	    		{{else}}
+	    			{{> signup}}
+	    		{{/if}}
 	    		</div>
 
 	    	</main>

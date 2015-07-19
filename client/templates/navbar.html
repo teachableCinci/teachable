@@ -4,17 +4,21 @@
 <div class='navbar-fixed'>
     <nav class="nav-wrapper blue">
       <a href="#!" class="brand-logo">Home</a>
+      <a href='learningHistory'>{{points}} pts </a>
       <a href="#" data-activates="sideNav" class="button-collapse"><i class="material-icons menu">menu</i></a>
 
       <ul class="right fixed">
-
-
+        <a></a>
+        {{#if currentUser}}
+        <a href='learningHistory'>{{points}} pts </a>
+        {{/if}}
       </ul>
       <ul class="side-nav fixed" id="sideNav">
        	<li> <a href="#!">Teachable</a> </li>
         <li> <a> stuff </a></li>
         {{#if currentUser}}
         <li> {{> logout}}</li>
+
         {{/if}}
       </ul>
 

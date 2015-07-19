@@ -1,4 +1,59 @@
 <template name='lesson1'>
 
+{{> twoNounsAndArticle}}
+
+{{> quickQuiz1}}
+
 
 </template>
+
+<template name='twoNounsAndArticle'>
+<ul>
+	<li>The word for "man" in Spanish is "hombre". [[play "hombre" in spanish] and have replay button.]</li>
+	<li>The word for "car" is "auto"</li>
+	<li>The word for "the" (for masculine nouns such as "hombre" or "auto" is "el". So "the car" is "el auto"</li>
+	<li>"he/she/it loves" is "ama"</li>
+	<li>So to say "the man loves the car", you would say "el hombre ama el auto"</li>
+
+</ul>
+
+</template>
+
+<template name='quickQuiz1'>
+	<p> {{question.question}} </p>
+	{{#if equals question.type 'handwriting'}}
+		{{> handwriting}}
+	{{/if}}
+	<button id='checkAnswer' class="waves-effect waves-white white btn blue-text" value='Check Answer'>Check Answer</button>
+
+		
+	<!-- text input -->
+
+
+
+<!--
+
+{{#if equals question.type 'handwriting'}}
+
+	{{/if}}
+
+	remove lesson template
+
+	write out in Spanish "man"
+
+	write out in Spanish "the car loves the man"
+
+
+
+-->
+
+
+</template>
+
+
+<!--
+
+
+
+
+-->

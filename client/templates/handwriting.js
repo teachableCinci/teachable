@@ -196,12 +196,12 @@ function recognize(strokes) {
 	  function(jsonResult) {
 	  		console.log('server result', jsonResult);
 			var text = jsonResult.result.wordCandidates[0].candidates[0].label;
-			$('#result').val(text);
+			$('#userAnswer').val(text);
 	  },
 	  "json"
 	).error(function(xhr){
-		$("#result").css("color", "#fe4a5d");
- 		$("#result").html("<p>" + jQuery.parseJSON(xhr.responseText).result.error + "</p>");
+		$("#resultError").css("color", "#fe4a5d");
+ 		$("#resultError").html("<p>" + jQuery.parseJSON(xhr.responseText).result.error + "</p>");
   });
 }
 
